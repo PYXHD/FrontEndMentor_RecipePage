@@ -1,0 +1,238 @@
+@font-face {
+  font-family: Young-serif;
+  src: url(./assets/fonts/young-serif/YoungSerif-Regular.ttf);
+}
+@font-face {
+  font-family: Outfit;
+  src: url(./assets/fonts/outfit/Outfit-Regular.ttf);
+}
+:root {
+  --background: white;
+  --secondary-background: #fff7fc;
+  --primary_title: #2b2b2b;
+  --secondary_title: #89391e;
+  --textcolor: #54504d;
+  --secondary_textcolor: #7a2949;
+
+  --font_regular: 400;
+  --font_bold: 700;
+}
+
+/* ********** GENERAL SETTINGS ********** */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: var(--background);
+}
+.header-img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 600px;
+}
+h1 {
+  font-family: Young-serif;
+  font-weight: var(--font_regular);
+  color: var(--primary_title);
+}
+h2 {
+  font-family: Young-serif;
+  font-weight: var(--font_regular);
+  color: var(--secondary_title);
+  padding-bottom: 15px;
+}
+p {
+  font-family: Outfit;
+  font-weight: var(--font_regular);
+  color: var(--textcolor);
+}
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style-position: outside;
+  padding: 10px;
+  font-family: Outfit;
+  font-weight: var(--font_regular);
+  color: var(--textcolor);
+}
+li {
+  margin-left: 20px;
+  padding-left: 20px;
+}
+span {
+  font-weight: var(--font_bold);
+}
+
+/* ********** MAIN-PART ********** */
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 30px;
+}
+.prep-container {
+  margin: 0 20px;
+  padding: 20px;
+  background: var(--secondary-background);
+  border-radius: 15px;
+}
+.prep-container span {
+  color: var(--secondary_textcolor);
+}
+.ingredients-container,
+.instructions-container,
+.nutrition-container {
+  position: relative;
+  padding: 30px 20px;
+}
+.ingredients-container::after,
+.instructions-container::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 95%;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--textcolor);
+  opacity: 0.3;
+}
+.nutrition-score {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 30px 0;
+}
+.nutrition-score div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.nutrition-score div:not(:last-child):after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 98%;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--textcolor);
+  opacity: 0.3;
+}
+.nutrition-score div p:first-child {
+  padding-left: 30px;
+}
+.nutrition-score div span {
+  padding-left: 10px;
+  color: var(--secondary_title);
+}
+.bon-appetit {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: var(--font_bold);
+  text-transform: uppercase;
+  padding: 50px 0;
+}
+.attribution {
+  position: relative;
+  color: var(--primary_title);
+  font-size: 14px;
+  text-align: center;
+  margin: 40px 0 10px;
+}
+.attribution a {
+  color: var(--primary_title);
+}
+
+/* ********** MEDIA-QUERIES ********** */
+@media screen and (min-width: 600px) {
+  body {
+    width: 600px;
+    margin: 0 auto;
+    background: center/contain url(./assets/images/background-responsive.png);
+  }
+  .header-img {
+    border-radius: 15px;
+    margin-top: 20px;
+  }
+  .header-container,
+  .ingredients-container,
+  .instructions-container {
+    padding: 20px 0;
+  }
+  .bon-appetit {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    width: 80%;
+    max-width: 1000px;
+    grid-template-columns: 40% 60%;
+    grid-template-areas:
+      "img img"
+      "head prep"
+      "ingr nutr"
+      "instr instr"
+      "app app"
+      "attrib attrib";
+  }
+  h2 {
+    padding-left: 20px;
+  }
+  ul {
+    padding: 0;
+  }
+  .img-container {
+    grid-area: img;
+    margin: 50px;
+  }
+  .header-container {
+    justify-content: space-evenly;
+    grid-area: head;
+    margin: 0;
+    padding: 20px 0;
+  }
+  .prep-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: prep;
+    margin: 40px;
+  }
+  .ingredients-container {
+    grid-area: ingr;
+    padding-right: 40px;
+  }
+  .ingredients-container ul {
+    padding-top: 30px;
+  }
+  .instructions-container {
+    grid-area: instr;
+  }
+  .ingredients-container::after,
+  .instructions-container::after {
+    display: none;
+  }
+  .nutrition {
+    grid-area: nutr;
+    padding: 20px 0;
+  }
+  .nutrition-container {
+    padding: 0;
+  }
+  .bon-appetit {
+    grid-area: app;
+  }
+  .attribution {
+    grid-area: attrib;
+  }
+}
