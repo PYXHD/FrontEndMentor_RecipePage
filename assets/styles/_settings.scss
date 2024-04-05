@@ -1,0 +1,77 @@
+@font-face {
+  font-family: fontTitle;
+  src: url(../fonts/young-serif/YoungSerif-Regular.ttf);
+}
+@font-face {
+  font-family: fontText;
+  src: url(../fonts/outfit/Outfit-VariableFont_wght.ttf); //weights: 400, 600, 700;
+}
+
+@mixin font($f-family, $f-size, $f-weight, $f-color) {
+  font-family: $f-family;
+  font-size: $f-size;
+  font-weight: $f-weight;
+  color: $f-color;
+}
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+$White: white;
+$Eggshell: rgb(243, 230, 216);
+$RoseWhite: rgb(255, 245, 250);
+$NutMeg: rgb(133, 70, 50);
+$DarkRasberry: rgb(123, 40, 79);
+$LightGrey: rgb(228, 222, 216);
+$WengeBrown: rgb(95, 87, 78);
+$DarkCharcoal: rgb(48, 45, 44);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $Eggshell;
+}
+h1 {
+  @include font(fontTitle, 2.5rem, 300, $DarkCharcoal);
+}
+h2 {
+  @include font(fontTitle, 1.8rem, 500, $NutMeg);
+}
+h3 {
+  @include font(fontText, 1.2rem, 700, $DarkRasberry);
+  margin-bottom: 15px;
+}
+p {
+  @include font(fontText, 1rem, 400, $WengeBrown);
+  line-height: 20px;
+}
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  li {
+    list-style: none;
+    @include font(fontText, 1rem, 400, $WengeBrown);
+    line-height: 22px;
+
+    &:before {
+      content: "•";
+      margin-right: 30px;
+    }
+
+    span {
+      font-weight: 700;
+      color: $WengeBrown;
+    }
+  }
+}

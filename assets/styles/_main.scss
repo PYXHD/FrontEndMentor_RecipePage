@@ -1,0 +1,109 @@
+main {
+  max-width: 740px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  background-color: $White;
+  border-radius: 18px;
+  margin-top: 135px;
+  margin-bottom: 135px;
+  padding: 40px;
+
+  .header-img {
+    width: 680px;
+    border-radius: 8px;
+  }
+
+  .header-container {
+    @include flexColumn;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .prep-container {
+    width: 100%;
+    background-color: $RoseWhite;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+  .ingredients-container {
+    @include flexColumn;
+  }
+
+  .instructions-container {
+    position: relative;
+    @include flexColumn;
+    margin-top: 38px;
+    margin-bottom: 38px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: $WengeBrown;
+      top: -25px;
+      opacity: 0.3;
+    }
+
+    ol {
+      li {
+        counter-increment: mycounter;
+
+        &::before {
+          content: counter(mycounter) ".";
+          @include font(fontText, 1rem, 700, $WengeBrown);
+        }
+      }
+    }
+  }
+
+  .nutrition {
+    position: relative;
+    @include flexColumn;
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background-color: $WengeBrown;
+      top: -25px;
+      opacity: 0.3;
+    }
+
+    .nutrition-container {
+      @include flexColumn;
+    }
+
+    .nutrition-score {
+      @include flexColumn;
+      margin-top: 20px;
+
+      .score {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 5px 35px;
+
+        &:nth-child(1)::after,
+        &:nth-child(2)::after,
+        &:nth-child(3)::after {
+          content: "";
+          position: absolute;
+          height: 1px;
+          width: 100%;
+          background-color: $WengeBrown;
+          opacity: 0.3;
+          bottom: -10px;
+        }
+
+        p span {
+          @include font(fontText, 1rem, 700, $NutMeg);
+        }
+      }
+    }
+  }
+}

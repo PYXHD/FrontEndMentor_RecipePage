@@ -1,0 +1,235 @@
+@charset "UTF-8";
+@font-face {
+  font-family: fontTitle;
+  src: url(../fonts/young-serif/YoungSerif-Regular.ttf);
+}
+@font-face {
+  font-family: fontText;
+  src: url(../fonts/outfit/Outfit-VariableFont_wght.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgb(243, 230, 216);
+}
+
+h1 {
+  font-family: fontTitle;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(48, 45, 44);
+}
+
+h2 {
+  font-family: fontTitle;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: rgb(133, 70, 50);
+}
+
+h3 {
+  font-family: fontText;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: rgb(123, 40, 79);
+  margin-bottom: 15px;
+}
+
+p {
+  font-family: fontText;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(95, 87, 78);
+  line-height: 20px;
+}
+
+ul,
+ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 8px;
+}
+ul li,
+ol li {
+  list-style: none;
+  font-family: fontText;
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgb(95, 87, 78);
+  line-height: 22px;
+}
+ul li:before,
+ol li:before {
+  content: "•";
+  margin-right: 30px;
+}
+ul li span,
+ol li span {
+  font-weight: 700;
+  color: rgb(95, 87, 78);
+}
+
+main {
+  max-width: 740px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 30px;
+  background-color: white;
+  border-radius: 18px;
+  margin-top: 135px;
+  margin-bottom: 135px;
+  padding: 40px;
+}
+main .header-img {
+  width: 680px;
+  border-radius: 8px;
+}
+main .header-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+main .prep-container {
+  width: 100%;
+  background-color: rgb(255, 245, 250);
+  padding: 30px;
+  border-radius: 12px;
+}
+main .ingredients-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+main .instructions-container {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  margin-top: 38px;
+  margin-bottom: 38px;
+}
+main .instructions-container::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(95, 87, 78);
+  top: -25px;
+  opacity: 0.3;
+}
+main .instructions-container ol li {
+  counter-increment: mycounter;
+}
+main .instructions-container ol li::before {
+  content: counter(mycounter) ".";
+  font-family: fontText;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(95, 87, 78);
+}
+main .nutrition {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+main .nutrition::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(95, 87, 78);
+  top: -25px;
+  opacity: 0.3;
+}
+main .nutrition .nutrition-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+}
+main .nutrition .nutrition-score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  margin-top: 20px;
+}
+main .nutrition .nutrition-score .score {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px 35px;
+}
+main .nutrition .nutrition-score .score:nth-child(1)::after, main .nutrition .nutrition-score .score:nth-child(2)::after, main .nutrition .nutrition-score .score:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background-color: rgb(95, 87, 78);
+  opacity: 0.3;
+  bottom: -10px;
+}
+main .nutrition .nutrition-score .score p span {
+  font-family: fontText;
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(133, 70, 50);
+}/*# sourceMappingURL=index.css.map */
