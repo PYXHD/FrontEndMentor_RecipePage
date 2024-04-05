@@ -5,20 +5,38 @@ main {
   justify-content: center;
   gap: 30px;
   background-color: $White;
-  border-radius: 18px;
   margin-top: 135px;
   margin-bottom: 135px;
+  border-radius: 18px;
   padding: 40px;
+
+  @media screen and (max-width: 740px) {
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 0;
+  }
 
   .header-img {
     width: 680px;
     border-radius: 8px;
+
+    @media screen and (max-width: 740px) {
+      width: 100%;
+      border-radius: 0;
+    }
   }
 
   .header-container {
     @include flexColumn;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    @media screen and (max-width: 740px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
   .prep-container {
@@ -26,10 +44,21 @@ main {
     background-color: $RoseWhite;
     padding: 30px;
     border-radius: 12px;
+
+    @media screen and (max-width: 740px) {
+      width: auto;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
   }
 
   .ingredients-container {
     @include flexColumn;
+
+    @media screen and (max-width: 740px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 
   .instructions-container {
@@ -37,6 +66,11 @@ main {
     @include flexColumn;
     margin-top: 38px;
     margin-bottom: 38px;
+
+    @media screen and (max-width: 740px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
 
     &::before {
       content: "";
@@ -46,6 +80,10 @@ main {
       background-color: $WengeBrown;
       top: -25px;
       opacity: 0.3;
+
+      @media screen and (max-width: 740px) {
+        width: 80%;
+      }
     }
 
     ol {
@@ -64,6 +102,11 @@ main {
     position: relative;
     @include flexColumn;
 
+    @media screen and (max-width: 740px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
     &::before {
       content: "";
       position: absolute;
@@ -72,6 +115,10 @@ main {
       background-color: $WengeBrown;
       top: -25px;
       opacity: 0.3;
+
+      @media screen and (max-width: 740px) {
+        width: 80%;
+      }
     }
 
     .nutrition-container {

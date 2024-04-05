@@ -102,14 +102,29 @@ main {
           justify-content: center;
   gap: 30px;
   background-color: white;
-  border-radius: 18px;
   margin-top: 135px;
   margin-bottom: 135px;
+  border-radius: 18px;
   padding: 40px;
+}
+@media screen and (max-width: 740px) {
+  main {
+    width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    padding: 0;
+  }
 }
 main .header-img {
   width: 680px;
   border-radius: 8px;
+}
+@media screen and (max-width: 740px) {
+  main .header-img {
+    width: 100%;
+    border-radius: 0;
+  }
 }
 main .header-container {
   display: -webkit-box;
@@ -123,11 +138,24 @@ main .header-container {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+@media screen and (max-width: 740px) {
+  main .header-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 main .prep-container {
   width: 100%;
   background-color: rgb(255, 245, 250);
   padding: 30px;
   border-radius: 12px;
+}
+@media screen and (max-width: 740px) {
+  main .prep-container {
+    width: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
 }
 main .ingredients-container {
   display: -webkit-box;
@@ -138,6 +166,12 @@ main .ingredients-container {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 25px;
+}
+@media screen and (max-width: 740px) {
+  main .ingredients-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }
 main .instructions-container {
   position: relative;
@@ -152,6 +186,12 @@ main .instructions-container {
   margin-top: 38px;
   margin-bottom: 38px;
 }
+@media screen and (max-width: 740px) {
+  main .instructions-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 main .instructions-container::before {
   content: "";
   position: absolute;
@@ -160,6 +200,11 @@ main .instructions-container::before {
   background-color: rgb(95, 87, 78);
   top: -25px;
   opacity: 0.3;
+}
+@media screen and (max-width: 740px) {
+  main .instructions-container::before {
+    width: 80%;
+  }
 }
 main .instructions-container ol li {
   counter-increment: mycounter;
@@ -182,6 +227,12 @@ main .nutrition {
           flex-direction: column;
   gap: 25px;
 }
+@media screen and (max-width: 740px) {
+  main .nutrition {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
 main .nutrition::before {
   content: "";
   position: absolute;
@@ -190,6 +241,11 @@ main .nutrition::before {
   background-color: rgb(95, 87, 78);
   top: -25px;
   opacity: 0.3;
+}
+@media screen and (max-width: 740px) {
+  main .nutrition::before {
+    width: 80%;
+  }
 }
 main .nutrition .nutrition-container {
   display: -webkit-box;
